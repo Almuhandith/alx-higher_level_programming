@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+# def print_matrix_integer(matrix=[[]]):
+#     for list in matrix:
+#         for item in list:
+#             if item != 0:
+#                 print("", end='')
+#             print('{}'.format(item), end=' ')
+#         print()
 def print_matrix_integer(matrix=[[]]):
-    for list in matrix:
-        for item in list:
-            if item != 0:
-                print("", end='')
-            print('{}'.format(item), end=' ')
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if j != 0:
+                print(" ", end='')
+            print("{:d}".format(matrix[i][j]), end='')
         print()
