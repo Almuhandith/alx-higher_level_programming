@@ -12,4 +12,4 @@ def to_json_string(my_obj):
     Raises:
         Exception: when the object can't be encoded
     """
-    return json.load(my_obj)
+    return json.loads(my_obj)
