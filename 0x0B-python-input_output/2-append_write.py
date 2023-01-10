@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-""" Module that contains a function that appends a string to a text file """
+""" Module that contains a function that appends to a text file
+"""
 
-def write_file(filename="", text=""):
-    """ Function that writes to a text file
+
+def append_write(filename="", text=""):
+    """ Function that appends to a text file
     Args:
         filename: filename
         text: text to write
