@@ -1,88 +1,90 @@
 #!/usr/bin/python3
-""" Module that defines the rectangle class """
-
-
+""" Module that contains class Rectangle,
+inheritance of class Base
+"""
 from models.base import Base
 
+
 class Rectangle(Base):
-    """ Class to create rectangles"""
+    """ Class Rectangle """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Initializes instances """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
+    @property
+    def width(self):
+        """ width getter """
+        return self.__width
+
     @width.setter
-    def set_width(self, value):
+    def width(self, value):
         """ width setter """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    
+
     @property
-    def get_width(self):
-        """ width getter """
-        return self.__width
-    
+    def height(self):
+        """ height getter """
+        return self.__height
+
     @height.setter
-    def set_height(self, value):
+    def height(self, value):
         """ height setter """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-    
+
     @property
-    def get_height(self):
-        """ height getter """
-        return self.__height
-    
+    def x(self):
+        """ x getter """
+        return self.__x
+
     @x.setter
-    def set_x(self, value):
+    def x(self, value):
         """ x setter """
         if type(value) is not int:
             raise TypeError("x must be an integer")
-        if value <= 0:
-            raise ValueError("y must be >= 0")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
-    
+
     @property
-    def get_x(self):
-        """ x getter """
-        return self.__x
-    
-    @y.setter
-    def set_y(self, value):
-        """ y setter """
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
-        if value <= 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
-    
-    @property
-    def get_y(self):
+    def y(self):
         """ y getter """
         return self.__y
 
+    @y.setter
+    def y(self, value):
+        """ y setter """
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
+
     def area(self):
-        """ Returns the area of a rectangle """
+        """ returns the area of the rectangle object """
         return self.width * self.height
-    
+
     def display(self):
-        """ Displays a rectangle """
+        """ displays a rectangle """
         rectangle = self.y * "\n"
         for i in range(self.height):
             rectangle += (" " * self.x)
             rectangle += ("#" * self.width) + "\n"
 
         print(rectangle, end='')
-    
+
     def __str__(self):
         """ str special method """
         str_rectangle = "[Rectangle] "
