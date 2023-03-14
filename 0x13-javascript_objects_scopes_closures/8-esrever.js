@@ -5,5 +5,5 @@ const esrever = (list) => {
   list.forEach((element) => reversedArray.unshift(element));
   return (reversedArray);
 };
-  
+
 module.exports = { esrever };

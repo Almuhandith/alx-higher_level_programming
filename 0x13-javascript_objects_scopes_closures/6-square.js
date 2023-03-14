@@ -7,8 +7,8 @@ class Square extends Square5 {
       c = 'X';
     }
     for (let i = 0; i < this.height; i++) {
-        console.log(`${c}`.repeat(this.width));
-      }
+      console.log(`${c}`.repeat(this.width));
+    }
   }
 }
 
