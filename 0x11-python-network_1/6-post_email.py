@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Sends a POST request to the passed URL with the email as a parameter,
+Sends a POST request to a URL with the email as a parameter,
 and finally displays the body of the response."""
 
 
